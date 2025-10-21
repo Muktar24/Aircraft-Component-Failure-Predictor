@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-def load_and_preprocess(filepath="data/component_data.csv"):
+def load_and_preprocess(filepath="./Data/component_data.csv"):
     df = pd.read_csv(filepath)
     X = df.drop(["Failure Probability"], axis=1)
     y = df["Failure Probability"]
