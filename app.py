@@ -6,7 +6,7 @@ from pre_processing import *
 from sklearn.preprocessing import StandardScaler
 
 # --- Load Data ---
-df = pd.read_csv("data/component_data.csv")
+df = pd.read_csv("./Data/component_data.csv")
 X = df.drop(["Failure Probability"], axis=1)
 y = df["Failure Probability"]
 X_train, y_train = load_and_preprocess()
