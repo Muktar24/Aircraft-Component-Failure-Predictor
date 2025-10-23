@@ -19,15 +19,13 @@ theta = gradient_descent(X_train_scaled, y_train)
 def app():
     # --- App Setup ---
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
-
-    # --- Custom CSS ---
-   st.markdown(
+    st.markdown(
        
-    """
-    <style>
+     """
+     <style>
     
-    /* Target the top-left hamburger menu button */
-    [data-testid="stSidebarNav"]::before {
+     /* Target the top-left hamburger menu button */
+     [data-testid="stSidebarNav"]::before {
         content: "☰";
         position: fixed;
         top: 15px;
@@ -37,22 +35,22 @@ def app():
         animation: blink 1s infinite;
         cursor: pointer;
         z-index: 9999;
-    }
+     }
 
-    @keyframes blink {
+     @keyframes blink {
         50% {
             opacity: 0;
         }
-    }
+     }
 
-    /* Hide the original button (optional) */
-    button[kind="header"] {
+     /* Hide the original button (optional) */
+     button[kind="header"] {
         opacity: 0 !important;
     }
-    </style>
-    """,
-    unsafe_allow_html=True
- )
+     </style>
+     """,
+     unsafe_allow_html=True
+)
 
     # --- Title ---
     st.markdown("<h1 class='main-title'>✈️ Aircraft Component Failure Prediction Dashboard</h1>", unsafe_allow_html=True)
