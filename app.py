@@ -21,32 +21,36 @@ def app():
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
 
     # --- Custom CSS ---
-    st.markdown("""
-        <style>
-        body {
-            background: linear-gradient(to right, #001f3f, #003366);
-            color: white;
+  st.markdown(
+    """
+    <style>
+    /* Target the top-left hamburger menu button */
+    [data-testid="stSidebarNav"]::before {
+        content: "☰";
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        font-size: 28px;
+        color: #ff4b4b;
+        animation: blink 1s infinite;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
         }
-        .main-title {
-            text-align: center;
-            color: #00BFFF;
-            font-size: 40px !important;
-            text-shadow: 2px 2px 10px rgba(0,191,255,0.5);
-            margin-bottom: 0px;
-        }
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(0,0,0,0.7);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+    }
+
+    /* Hide the original button (optional) */
+    button[kind="header"] {
+        opacity: 0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     # --- Title ---
     st.markdown("<h1 class='main-title'>✈️ Aircraft Component Failure Prediction Dashboard</h1>", unsafe_allow_html=True)
