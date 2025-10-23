@@ -20,37 +20,34 @@ def app():
     # --- App Setup ---
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
     st.markdown(
-       
-     """
-     <style>
-    
-     /* Target the top-left hamburger menu button */
-     [data-testid="stSidebarNav"]::before {
-        content: "☰";
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        font-size: 28px;
-        color: #ff4b4b;
-        animation: blink 1s infinite;
-        cursor: pointer;
-        z-index: 9999;
-     }
-
-     @keyframes blink {
+    """
+    <style>
+    /* Blinking animation keyframes */
+    @keyframes blink {
         50% {
-            opacity: 0;
+            opacity: 0.3;
         }
-     }
-
-     /* Hide the original button (optional) */
-     button[kind="header"] {
-        opacity: 0 !important;
     }
-     </style>
-     """,
-     unsafe_allow_html=True
+
+    /* Select the top-left menu button in Streamlit */
+    button[data-testid="baseButton-headerNoPadding"] {
+        animation: blink 1s infinite;
+        border: 2px solid #ff4b4b !important;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #ff4b4b;
+    }
+
+    /* Optional: add hover effect */
+    button[data-testid="baseButton-headerNoPadding"]:hover {
+        box-shadow: 0 0 20px #ff0000;
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
+
 
     # --- Title ---
     st.markdown("<h1 class='main-title'>✈️ Aircraft Component Failure Prediction Dashboard</h1>", unsafe_allow_html=True)
