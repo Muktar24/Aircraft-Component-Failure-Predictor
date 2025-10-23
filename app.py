@@ -21,9 +21,11 @@ def app():
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
 
     # --- Custom CSS ---
-  st.markdown(
+   st.markdown(
+       
     """
     <style>
+    
     /* Target the top-left hamburger menu button */
     [data-testid="stSidebarNav"]::before {
         content: "☰";
@@ -50,7 +52,7 @@ def app():
     </style>
     """,
     unsafe_allow_html=True
-)
+ )
 
     # --- Title ---
     st.markdown("<h1 class='main-title'>✈️ Aircraft Component Failure Prediction Dashboard</h1>", unsafe_allow_html=True)
