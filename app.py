@@ -17,11 +17,6 @@ X_train_scaled = scaler.fit_transform(X_train)
 theta = gradient_descent(X_train_scaled, y_train)
 
 def app():
-    if st.sidebar.button("Blink"):
-        st.toast("Blinking!", icon="✨")
-        
-      
-    
     if "first_visit" not in st.session_state:
         st.session_state.first_visit = True
     else:
@@ -32,7 +27,7 @@ def app():
            st.markdown("""
             <style>
             /* Target Streamlit's sidebar toggle button */
-            [data-testid="stSidebar"] {
+            [data-testid="collapsedControl"] {
                 animation: blink 1s infinite;
                 border: 2px solid #ff4b4b !important;
                 border-radius: 5px;
