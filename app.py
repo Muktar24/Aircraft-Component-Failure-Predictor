@@ -17,29 +17,30 @@ X_train_scaled = scaler.fit_transform(X_train)
 theta = gradient_descent(X_train_scaled, y_train)
 
 def app():
+    
     if "first_visit" not in st.session_state:
         st.session_state.first_visit = True
+    
     else:
-        st.session_state.first_visit = False
-
+        st.session_state.first_visit = False  
 # Inject CSS for blinking effect
     if st.session_state.first_visit:
-           st.markdown("""
-            <style>
-            /* Target Streamlit's sidebar toggle button */
-            [data-testid="collapsedControl"] {
-                animation: blink 1s infinite;
-                border: 2px solid #ff4b4b !important;
-                border-radius: 5px;
-            }
+        st.markdown("""
+        <style>
+        /* Target the specific sidebar toggle button */
+        [data-testid="collapsedControl"] {
+            animation: blink 1s infinite;
+            border: 2px solid #ff4b4b !important;
+            border-radius: 5px;
+        }
     
-            @keyframes blink {
-                0% { box-shadow: 0 0 10px 2px #ff4b4b; }
-                50% { box-shadow: 0 0 0 0 #ff4b4b; }
-                100% { box-shadow: 0 0 10px 2px #ff4b4b; }
-            }
-            </style>
-            """, unsafe_allow_html=True)
+        @keyframes blink {
+            0% { box-shadow: 0 0 10px 2px #ff4b4b; }
+            50% { box-shadow: 0 0 0 0 #ff4b4b; }
+            100% { box-shadow: 0 0 10px 2px #ff4b4b; }
+        }
+        </style>
+        """, unsafe_allow_html=True)
     # --- App Setup ---
     
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
