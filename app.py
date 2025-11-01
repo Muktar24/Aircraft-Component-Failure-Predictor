@@ -17,6 +17,10 @@ X_train_scaled = scaler.fit_transform(X_train)
 theta = gradient_descent(X_train_scaled, y_train)
 
 def app():
+    if st.sidebar.button("Blink"):
+        st.toast("Blinking!", icon="✨")
+        
+      
     
     if "first_visit" not in st.session_state:
         st.session_state.first_visit = True
