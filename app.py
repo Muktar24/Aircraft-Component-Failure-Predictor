@@ -20,18 +20,18 @@ def app():
     
     if "first_visit" not in st.session_state:
         st.session_state.first_visit = True
-    
     else:
-        st.session_state.first_visit = False  
+        st.session_state.first_visit = False
 # Inject CSS for blinking effect
     if st.session_state.first_visit:
         st.markdown("""
         <style>
-        /* Target the specific sidebar toggle button */
-        [data-testid="baseButton-header"] {
+        /* Target the sidebar toggle button */
+        [data-testid="stSidebarCollapseControl"],
+        [data-testid="stSidebar"] button:first-child {
             animation: blink 1s infinite;
             border: 2px solid #ff4b4b !important;
-            border-radius: 5px;
+            border-radius: 5px !important;
         }
     
         @keyframes blink {
@@ -41,6 +41,8 @@ def app():
         }
         </style>
         """, unsafe_allow_html=True)
+    
+    
     # --- App Setup ---
     
     st.set_page_config(page_title="Aircraft Failure Predictor", page_icon="✈️", layout="wide")
