@@ -28,7 +28,7 @@ def app():
            st.markdown("""
             <style>
             /* Target Streamlit's sidebar toggle button */
-            [data-testid="stSidebarCollapseButton"] {
+            [data-testid="stSidebar"] {
                 animation: blink 1s infinite;
                 border: 2px solid #ff4b4b !important;
                 border-radius: 5px;
