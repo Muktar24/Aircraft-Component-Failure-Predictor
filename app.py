@@ -28,7 +28,7 @@ def app():
         st.markdown("""
         <style>
         /* Target the specific sidebar toggle button */
-        [data-testid="collapsedControl"] {
+        [data-testid="baseButton-header"] {
             animation: blink 1s infinite;
             border: 2px solid #ff4b4b !important;
             border-radius: 5px;
