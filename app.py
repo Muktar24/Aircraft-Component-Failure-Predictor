@@ -14,7 +14,7 @@ X_train, y_train = load_and_preprocess()
 # --- Scale and Train ---
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
-W1,W2=train(X_train_scaled,Y_train,iter=1000,lr=0.1)
+theta = gradient_descent(X_train_scaled, Y_train)
 
 def app():
     
@@ -96,7 +96,7 @@ def app():
 
     X_input = pd.DataFrame([features], columns=X.columns)
     X_scaled = scaler.transform(X_input)
-    prob = predict(X_scaled,W1,W2)
+    prob = predict(X_scaled,theta)
 
     # --- Tabs ---
     tabs = st.tabs(["🧠 Prediction", "📊 Feature Insights", "📈 Data Visualization", "ℹ️ About Project"])
