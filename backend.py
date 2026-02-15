@@ -19,7 +19,7 @@ def gradient_descent(X, y, lr=0.1, iter=1000, tol=1e-10):
 
 def predict_prob(X, theta):
     X_b = np.c_[np.ones((X.shape[0],1)), X]
-    return sigmoid(X_b @ theta)
+    return sigmoid(X_b @ theta)[0]
 
 def predict(X, theta, thres=0.5):
     return (predict_prob(X, theta) >= thres).astype(int)
