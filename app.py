@@ -96,7 +96,7 @@ def app():
 
     X_input = pd.DataFrame([features], columns=X.columns)
     X_scaled = scaler.transform(X_input)
-    prob = predict(X_scaled,theta)
+    prob = predict_prob(X_scaled,theta)
 
     # --- Tabs ---
     tabs = st.tabs(["🧠 Prediction", "📊 Feature Insights", "📈 Data Visualization", "ℹ️ About Project"])
